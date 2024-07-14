@@ -9,11 +9,11 @@ import { useState } from "react";
 export default function Home() {
 
   const [total,setTotal] = useState(15);
-  const [previousPercentile,setPreviousPercentile] = useState(70);
+  const [previousPercentile,setPreviousPercentile] = useState(30);
  const [studentDetails,setStudentDetails] = useState({
-  correct:5,
-  rank:4,
-  percentile:70
+  correct:10,
+  rank:1,
+  percentile:30
  }); 
   return (
     <main >
@@ -63,7 +63,7 @@ export default function Home() {
       <div className="mt-8">
         <h3 className="font-bold text-lg">Question Analysis</h3>
         <p className="text-gray-700 mt-2">
-          You scored <span className="font-bold">10</span> questions correct out of <span className="font-bold">15</span>. However, it still needs some improvements.
+          You scored <span className="font-bold">{studentDetails?.correct}</span> questions correct out of <span className="font-bold">{total}</span>. However, it still needs some improvements.
         </p>
       </div>
       <div className="w-[60%] sm:w-[40%]">

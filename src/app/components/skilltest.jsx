@@ -79,7 +79,7 @@ const SkillTest = ({setStudentDetails,studentDetails,previousPercentile,setPrevi
                 <p className="block text-lg mb-4 font-bold">Conpresion Graph</p>
             </div>
           <p className="text-gray-700">
-            <strong>You scored 30% percentile</strong> which is lower than the average percentile 72% of all the engineers who took this assessment.
+            <strong>You scored {studentDetails?.percentile}% percentile</strong> which is lower than the average percentile 72% of all the engineers who took this assessment.
           </p>
           <PercentileGraph percentile = {studentDetails?.percentile} previousPercentile = {previousPercentile} setPreviousPercentile = {setPreviousPercentile}/>
       

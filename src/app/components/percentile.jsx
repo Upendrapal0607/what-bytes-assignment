@@ -8,10 +8,10 @@ const PercentileGraph = ({percentile,previousPercentile,setPreviousPercentile}) 
 
   const [percentileData ,setPercentileData]= useState([0, 20,70, 90, 50, 20,10,5,2,0]);
   useEffect(() => {
-  
+  console.log(percentileData,previousPercentile);
     const PreviouseData = [...percentileData];
-    const data = PreviouseData.map(data=>data== +previousPercentile?percentile:data)
-    setPercentileData(data);
+    const Mapeddata = PreviouseData.map(data=>data== +previousPercentile?percentile:data)
+    setPercentileData(Mapeddata);
     setPreviousPercentile(percentile)
   }, [percentile]);
   const data = {
