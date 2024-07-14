@@ -1,27 +1,49 @@
-import React, { useEffect, useState } from 'react';
-import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, LineElement, PointElement, LinearScale, CategoryScale, Tooltip, Legend } from 'chart.js';
+import React, { useEffect, useState } from "react";
+import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  LineElement,
+  PointElement,
+  LinearScale,
+  CategoryScale,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Tooltip, Legend);
+ChartJS.register(
+  LineElement,
+  PointElement,
+  LinearScale,
+  CategoryScale,
+  Tooltip,
+  Legend
+);
 
-const PercentileGraph = ({percentile,previousPercentile,setPreviousPercentile}) => {
-
-  const [percentileData ,setPercentileData]= useState([0, 20,70, 90, 50, 20,10,5,2,0]);
+const PercentileGraph = ({
+  percentile,
+  previousPercentile,
+  setPreviousPercentile,
+}) => {
+  const [percentileData, setPercentileData] = useState([
+    0, 20, 70, 90, 50, 20, 10, 5, 2, 0,
+  ]);
   useEffect(() => {
-  console.log(percentileData,previousPercentile);
+    console.log(percentileData, previousPercentile);
     const PreviouseData = [...percentileData];
-    const Mapeddata = PreviouseData.map(data=>data== +previousPercentile?percentile:data)
+    const Mapeddata = PreviouseData.map((data) =>
+      data == +previousPercentile ? percentile : data
+    );
     setPercentileData(Mapeddata);
-    setPreviousPercentile(percentile)
+    setPreviousPercentile(percentile);
   }, [percentile]);
   const data = {
     labels: percentileData,
     datasets: [
       {
-        label: 'Percentile Distribution',
+        label: "Percentile Distribution",
         data: percentileData,
         fill: false,
-        borderColor: '#8d9797',
+        borderColor: "#8d9797",
         tension: 0.5,
         pointRadius: 4,
         pointHoverRadius: 6,
@@ -47,14 +69,14 @@ const PercentileGraph = ({percentile,previousPercentile,setPreviousPercentile}) 
       x: {
         title: {
           display: true,
-          text: 'Percentile',
+          text: "Percentile",
         },
         ticks: {
           callback: function (value) {
             if ([0, 25, 50, 75, 100].includes(value)) {
               return value;
             }
-            return '';
+            return "";
           },
         },
         grid: {
@@ -65,7 +87,7 @@ const PercentileGraph = ({percentile,previousPercentile,setPreviousPercentile}) 
         display: false,
         title: {
           display: true,
-          text: 'Number of Students',
+          text: "Number of Students",
         },
         grid: {
           display: false, // This will remove the y-axis grid lines

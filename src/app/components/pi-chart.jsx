@@ -1,26 +1,26 @@
 "use client";
 import { TbTargetArrow } from "react-icons/tb";
-import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import React from "react";
+import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const PieChart = ({ correct, total }) => {
   const data = {
-    labels: ['Correct', 'Incorrect'],
+    labels: ["Correct", "Incorrect"],
     datasets: [
       {
-        label: 'Questions',
+        label: "Questions",
         data: [correct, total - correct],
-        backgroundColor: ['#3b82f6', '#e5e7eb'], // Tailwind blue-500 and gray-200
-        hoverBackgroundColor: ['#1e40af', '#d1d5db'], // Tailwind blue-900 and gray-300
+        backgroundColor: ["#3b82f6", "#e5e7eb"], // Tailwind blue-500 and gray-200
+        hoverBackgroundColor: ["#1e40af", "#d1d5db"], // Tailwind blue-900 and gray-300
       },
     ],
   };
 
   const options = {
-    cutout: '70%', // Makes it a doughnut chart
+    cutout: "70%", // Makes it a doughnut chart
     plugins: {
       legend: {
         display: false,

@@ -1,17 +1,16 @@
-"use client"
-import React, { useState } from 'react';
-import { IoLogoHtml5 } from 'react-icons/io';
-import Modal from 'react-modal';
+"use client";
+import React, { useState } from "react";
+import { IoLogoHtml5 } from "react-icons/io";
+import Modal from "react-modal";
 
-const FormModal = ({ isOpen, onRequestClose ,setStudentDetails,studentDetails}) => {
-  const [formData, setFormData] = useState(
-    studentDetails
+const FormModal = ({
+  isOpen,
+  onRequestClose,
+  setStudentDetails,
+  studentDetails,
+}) => {
+  const [formData, setFormData] = useState(studentDetails);
 
-  );
-
-//   correct:10,
-//   rank:1,
-//   percentile:30
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -31,19 +30,21 @@ const FormModal = ({ isOpen, onRequestClose ,setStudentDetails,studentDetails}) 
       overlayClassName="fixed inset-0 bg-black bg-opacity-50"
     >
       <div className="bg-white sm:w-[600px] w-full p-6 rounded-lg shadow-lg">
-        <div className='flex justify-between items-center mb-2'>
-        <h2 className="text-2xl mb-4 font-bold">Update Score</h2>
-        <div>
-  <p className="font-bold">HTML</p>
-          <IoLogoHtml5 className="w-8 h-8 mr-4 text-red-500" />
-            </div>
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-2xl mb-4 font-bold">Update Score</h2>
+          <div>
+            <p className="font-bold">HTML</p>
+            <IoLogoHtml5 className="w-8 h-8 mr-4 text-red-500" />
+          </div>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="mb-4 flex justify-between items-center">
-            <label className="flex items-center gap-2 text-gray-700"><span className='flex items-center justify-center text-white w-6 h-6 p-1 rounded-full bg-blue-700'>
-  1
-</span>
-Update your Rank</label>
+            <label className="flex items-center gap-2 text-gray-700">
+              <span className="flex items-center justify-center text-white w-6 h-6 p-1 rounded-full bg-blue-700">
+                1
+              </span>
+              Update your Rank
+            </label>
             <input
               type="text"
               name="rank"
@@ -53,10 +54,12 @@ Update your Rank</label>
             />
           </div>
           <div className="mb-4 flex justify-between items-center">
-          <label className="flex items-center gap-2 text-gray-700"><span className='flex items-center justify-center text-white w-6 h-6 p-1 rounded-full bg-blue-700'>
-  2
-</span>
-Update your Percentile</label>
+            <label className="flex items-center gap-2 text-gray-700">
+              <span className="flex items-center justify-center text-white w-6 h-6 p-1 rounded-full bg-blue-700">
+                2
+              </span>
+              Update your Percentile
+            </label>
             <input
               type="text"
               name="percentile"
@@ -67,10 +70,12 @@ Update your Percentile</label>
           </div>
 
           <div className="mb-4 flex justify-between items-center">
-          <label className="flex items-center gap-2 text-gray-700"><span className='flex items-center justify-center text-white w-6 h-6 p-1 rounded-full bg-blue-700'>
-  3
-</span>
-Update your Curent Score (out of 15)</label>
+            <label className="flex items-center gap-2 text-gray-700">
+              <span className="flex items-center justify-center text-white w-6 h-6 p-1 rounded-full bg-blue-700">
+                3
+              </span>
+              Update your Curent Score (out of 15)
+            </label>
             <input
               type="text"
               name="correct"
