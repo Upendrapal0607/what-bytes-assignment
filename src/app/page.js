@@ -45,8 +45,8 @@ export default function Home() {
           <Sidebar />
         </div>
         {/* Skill Test Components */}
-        <div className="skill-test sm:w-[52%] w-[100%] py-12">
-          <p>Skill Test</p>
+        <div className="skill-test sm:w-[48%] w-[100%] py-12">
+          <p className="px-0">Skill Test</p>
           <SkillTest
             setStudentDetails={setStudentDetails}
             previousPercentile={previousPercentile}
@@ -56,13 +56,13 @@ export default function Home() {
         </div>
 
         {/* Syllabus Analysis */}
-        <div className="syllabus w-[100%] sm:w-[33%] mt-16">
-          <div className=" bg-gray-100 flex gap-[1px] items-center justify-center flex-col">
+        <div className=" syllabus w-[100%] bg-white  sm:w-[33%] mt-20 shadow-lg border-t-[1px]">
+          <div className=" bg-gray-100 flex items-center justify-center flex-col gap-6">
             <div className="bg-white shadow-md w-[100%] max-w-xl">
               <SyllabusAnalysis />
             </div>
-            <div className="  flex flex-col items-center bg-white  shadow-md gap-8 w-[100%] py-4 px-0">
-              <div className="mt-8">
+            <div className="  flex flex-col items-center bg-white gap-8 w-[100%] py-4 px-0 shadow-lg border-t-[1px]">
+              <div className="mt-8 px-4">
                 <h3 className="font-bold text-lg">Question Analysis</h3>
                 <p className="text-gray-700 mt-2">
                   You scored{" "}

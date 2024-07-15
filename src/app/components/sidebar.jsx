@@ -19,7 +19,7 @@ const Sidebar = () => {
         {menuItems.map((item) => (
           <a key={item.name} href={"#"}>
             <div
-              className={`flex items-center md:px-0 px-4 py-3 gap-3 mr-2 my-4 rounded-e-full cursor-pointer transition-all ${
+              className={`flex items-center  px-3 py-3 gap-3 mr-2 my-4 rounded-e-full cursor-pointer transition-all ${
                 active === item.name
                   ? "text-blue-500 bg-blue-900 bg-opacity-50"
                   : "hover:bg-gray-700"

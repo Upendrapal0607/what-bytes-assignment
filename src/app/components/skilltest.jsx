@@ -27,8 +27,8 @@ const SkillTest = ({
 
   // };
   return (
-    <div className="max-w-xl mx-auto  rounded-lg shadow-lg">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 borde border-gray-400 border-x-1 border-y-0 border-b shadow-lg p-4">
+    <div className="flex flex-col gap-0 w-full mx-auto rounded-lg">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6 shadow-lg p-4 border-t-[1px]">
         <div>
           <p className="font-bold">HTML</p>
           <IoLogoHtml5 className="w-12 h-12 mr-4 text-red-500" />
@@ -53,7 +53,7 @@ const SkillTest = ({
         />
       </div>
 
-      <div className="flex justify-between flex-col font-bold text-lg mb-4 p-4">
+      <div className="flex justify-between flex-col font-bold text-lg mb-2 p-4 shadow-lg border-t-[1px]">
         <p>Quick Statistics</p>
         <div className="flex flex-col md:flex-row justify-between mb-4">
           <div className="text-start flex items-center gap-3">
@@ -89,11 +89,11 @@ const SkillTest = ({
           </div>
         </div>
       </div>
-      <div className="mt-4 p-4 shadow-sm">
+      <div className="mt-4 p-4 shadow-lg border-t-[1px]">
         <div>
           <p className="block text-lg mb-4 font-bold">Conpresion Graph</p>
         </div>
-        <p className="text-gray-700">
+        <p className="text-gray-700 ">
           <strong>You scored {studentDetails?.percentile}% percentile</strong>{" "}
           which is lower than the average percentile 72% of all the engineers
           who took this assessment.
